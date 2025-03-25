@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-21T21:54:07 CDT" name="Default suite" finished-at="2025-03-21T21:54:07 CDT" duration-ms="760">
+  <suite started-at="2025-03-24T17:18:28 CDT" name="Test Suite" finished-at="2025-03-24T17:18:29 CDT" duration-ms="1365">
     <groups>
     </groups>
-    <test started-at="2025-03-21T21:54:07 CDT" name="Default test" finished-at="2025-03-21T21:54:07 CDT" duration-ms="760">
+    <test started-at="2025-03-24T17:18:28 CDT" name="Login Tests" finished-at="2025-03-24T17:18:29 CDT" duration-ms="1365">
       <class name="com.api.tests.LoginRequest">
-        <test-method signature="login()[pri:0, instance:com.api.tests.LoginRequest@1bb564e2]" started-at="2025-03-21T21:54:07 CDT" name="login" finished-at="2025-03-21T21:54:07 CDT" duration-ms="747" status="PASS">
+        <test-method signature="login()[pri:0, instance:com.api.tests.LoginRequest@635eaaf1]" started-at="2025-03-24T17:18:28 CDT" name="login" finished-at="2025-03-24T17:18:29 CDT" duration-ms="964" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
       </class> <!-- com.api.tests.LoginRequest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.api.tests.CreateProgram">
+        <test-method signature="Createprogram(java.lang.String,org.json.simple.JSONObject)[pri:0, instance:com.api.tests.CreateProgram@636be97c]" started-at="2025-03-24T17:18:29 CDT" name="Createprogram" data-provider="jsonDataProvider" finished-at="2025-03-24T17:18:29 CDT" duration-ms="383" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Create Program with valid Data]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{"programDescription":"coursess","programName":"securityCyber","programStatus":"Active"}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Createprogram -->
+      </class> <!-- com.api.tests.CreateProgram -->
+    </test> <!-- Login Tests -->
+  </suite> <!-- Test Suite -->
 </testng-results>

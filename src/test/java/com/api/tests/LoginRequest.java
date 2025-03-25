@@ -27,7 +27,9 @@ public class LoginRequest {
 		payload.put("userLoginEmailId", resourceBundle.getString("username"));
 		payload.put("password", resourceBundle.getString("password"));
 		
-		response = baseClass.loginRequest(payload);
+		String endpoint = resourceBundle.getString("loginEndpoint");
+		response = baseClass.PostRequest(payload,endpoint);
+		
 		 
 		System.out.println(response.asPrettyString());
 		

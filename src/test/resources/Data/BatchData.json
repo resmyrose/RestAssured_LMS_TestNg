@@ -1,0 +1,9 @@
+{
+	"Create Batch":{
+	"batchName": "SDET1000",
+	  "batchDescription": "Testing-Batch",
+	  "batchNoOfClasses": 245,
+	  "programId": {{programId}},
+	  "programName":{{programName}}
+	  }
+}

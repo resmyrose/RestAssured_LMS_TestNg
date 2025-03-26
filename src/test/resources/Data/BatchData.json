@@ -11,8 +11,8 @@
 	    },
     {
       "scenarioName": "ValidBatch",
-      "batchDescription": "Nebastches",
-      "batchName": "SDET12238",
+      "batchDescription": "Olwrrtches",
+      "batchName": "SDET999",
       "batchNoOfClasses": 15,
       "batchStatus": "Active",
       "programId": "{{programId}}",

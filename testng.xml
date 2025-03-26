@@ -11,17 +11,20 @@
     </test>
     <test name="Create Program Test">
         <parameter name="jsonPath" value="Program.json" />
-        <parameter name="jsonKey" value="Create Program with valid Data" />
+        <parameter name="jsonKeyCreate" value="Create Program" />
+        <parameter name ="jsonKeyUpdate" value = "Update Program"/>
         
         <classes>
-            <class name="com.api.tests.CreateProgram" />
+            <class name="com.api.tests.ProgramModule" />
         </classes>
     </test>
-    <test name="Create Batch Test">
+    <test name="Create Batch Test" >
         <parameter name="jsonPath" value="BatchData.json" />
-        <parameter name="jsonKey" value="Create Batch" />
+        <parameter name="jsonKeyCreate" value="Create Batch" />
         <classes>
             <class name="com.api.tests.CreateBatch" />
         </classes>
     </test>
+
+
 </suite>

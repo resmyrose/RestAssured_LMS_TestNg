@@ -1,0 +1,37 @@
+Summary of What This Method Does:
+Reads a JSON file (using jsonPath and jsonKey), which contains multiple test cases.
+For each test case in the JSON file:
+It extracts and removes the scenarioName and statusCode from the JSON object.
+It constructs an Object[] containing:
+The modified JSON object (without the scenarioName and statusCode).
+The scenarioName (or "Unnamed Scenario" if missing).
+The statusCode (extracted from the JSON).
+Returns a 2D array (Object[][]), where each row contains the test data for one test case.
+This 2D array of test data is passed to the corresponding test method via the TestNG DataProvider mechanism, allowing each test to be run with different sets of data.
+
+Example of How This Works in Practice:
+Assume the JSON data looks like this:
+
+[
+    {
+        "scenarioName": "Test 1",
+        "statusCode": 200,
+        "batchId": "1234"
+    },
+    {
+        "scenarioName": "Test 2",
+        "statusCode": 404,
+        "batchId": "5678"
+    }
+]
+The Object[][] returned by getData() will look like:
+
+{
+    {{"batchId": "1234"}, "Test 1", 200},
+    {{"batchId": "5678"}, "Test 2", 404}
+}
+Each test method using this DataProvider will receive:
+
+The JSON object: {"batchId": "1234"} for the first test, {"batchId": "5678"} for the second.
+The scenario name: "Test 1" for the first test, "Test 2" for the second.
+The expected status code: 200 for the first test, 404 for the second.

@@ -1,10 +1,41 @@
 {
 	 
-	"Create Program with valid Data": [
-	{
-			"programName":"Arts-dCrafts",
-			"programDescription":"Crafting-courses",
-			"programStatus":"Active"
+	"Create Program": [
+	
+		{
+			"scenarioName": "InValid Data",
+			"programName" :"@@",
+			"programDescription":"@@",
+			"programStatus":"Active",
+			"statusCode":400
+		},
+		{
+					"scenarioName": "InValid Data",
+					"programName" :"@@",
+					"programDescription":" ",
+					"programStatus":"Active",
+					"statusCode":400
+						},
+		
+				
+		{
+			"scenarioName": "Valid Data",
+			"programName" :"Sdet12345",
+			"programDescription":"OnlineTestingCOurse",
+			"programStatus":"Active",
+			"statusCode":201
 		}
+	] ,
+	
+	"Update Program": [
+		
+			{
+				"scenarioName": "Valid Data",
+				"programDescription":"ArtWork Course",
+				"programName" :"Artists Courses",
+				"programStatus":"Active",
+				"statusCode":200
+			}
+			 
 		] 
 }

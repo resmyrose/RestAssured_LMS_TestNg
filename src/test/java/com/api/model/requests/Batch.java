@@ -5,10 +5,19 @@ import lombok.Data;
 @Data 
 public class Batch {
 	
-	private String batchName; 
-	  private String batchDescription; 
+	  private String batcDescription;
+	  private String batchName;
 	  private int batchNoOfClasses; 
-	  private int programId; 
-	  private String programName;
-
+	  private String batchStatus;
+	  private int programId;
+	public Batch(String batcDescription, String batchName, int batchNoOfClasses, String batchStatus, int programId) {
+		super();
+		this.batcDescription = batcDescription;
+		this.batchName = batchName;
+		this.batchNoOfClasses = batchNoOfClasses;
+		this.batchStatus = batchStatus;
+		this.programId = programId;
+	} 
+	  
+	  
 }

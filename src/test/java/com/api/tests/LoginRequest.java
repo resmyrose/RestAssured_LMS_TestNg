@@ -37,7 +37,7 @@ public class LoginRequest {
 		
 		ChainingData.token = loginresponse.getToken();
 		
-	 System.out.println("Roles: "+loginresponse.getRoles());
+	 
 		
 		
 	}

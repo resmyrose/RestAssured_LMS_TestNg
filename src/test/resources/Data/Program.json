@@ -1,8 +1,10 @@
 {
 	 
-	"Create Program with valid Data":{
-			"programName":"securityCyber",
-			"programDescription":"coursess",
+	"Create Program with valid Data": [
+	{
+			"programName":"Arts-dCrafts",
+			"programDescription":"Crafting-courses",
 			"programStatus":"Active"
 		}
+		] 
 }

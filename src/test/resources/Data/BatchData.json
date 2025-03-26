@@ -1,9 +1,23 @@
 {
-	"Create Batch":{
-	"batchName": "SDET1000",
-	  "batchDescription": "Testing-Batch",
-	  "batchNoOfClasses": 245,
-	  "programId": {{programId}},
-	  "programName":{{programName}}
-	  }
+  "Create Batch": [
+	{
+	      "scenarioName": "InvalidBatch_NoProgramId",
+	      "batchDescription": "@@@",
+	      "batchName": "@@6",
+	      "batchNoOfClasses": 15,
+	      "batchStatus": "InActive",
+	      "programId": "",
+		  "statusCode": 400
+	    },
+    {
+      "scenarioName": "ValidBatch",
+      "batchDescription": "Nebastches",
+      "batchName": "SDET12238",
+      "batchNoOfClasses": 15,
+      "batchStatus": "Active",
+      "programId": "{{programId}}",
+	  "statusCode": 201
+    }
+    
+  ]
 }

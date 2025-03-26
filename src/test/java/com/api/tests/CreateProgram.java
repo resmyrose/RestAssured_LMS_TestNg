@@ -1,38 +1,45 @@
 package com.api.tests;
 
 import java.io.IOException;
+
 import java.util.ResourceBundle;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.api.base.BaseClass;
 import com.api.model.responses.ProgramResponses;
 import com.api.utils.ChainingData;
-import com.api.utils.DataProviderClass;
+ 
+import com.api.utils.JsonReader;
 
 import io.restassured.response.Response;
 
 public class CreateProgram {
 
+	JsonReader jsonreader = new JsonReader();
 	BaseClass baseClass = new BaseClass();
 	public static ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
 	Response response;
-
-	
+ 
 	 
-	@Test( dataProvider = "jsonDataProvider", dataProviderClass = DataProviderClass.class)
-     public void Createprogram(String jsonKey, JSONObject data) throws IOException {
-        // Print details of the test case
-		System.out.println(ChainingData.token);
-        String jsonString = data.toJSONString();
-        System.out.println("Executing Test Case: " + jsonKey);
-        System.out.println("JSON Payload: " + jsonString);
+	@Test
+	@Parameters({"jsonPath", "jsonKey"})
+     public void Createprogram(String jsonPath, String jsonKey) throws IOException {
+        
+		 
+		JSONArray jsonDataArray = JsonReader.getRequestBodies(jsonPath, jsonKey);
+
+	    for (Object obj : jsonDataArray) {
+	        JSONObject jsonObject = (JSONObject) obj;
+	    
         String endpoint = resourceBundle.getString("CreateProgram");
          
         // Make the API request with JSONObject as body
-        Response response = baseClass.PostRequest(jsonString, endpoint); // Pass JSONObject directly
+        Response response = baseClass.PostRequest(jsonObject, endpoint);  
         
         // Print response details
         System.out.println("Response: " + response.asPrettyString());
@@ -46,8 +53,9 @@ public class CreateProgram {
         }
         ProgramResponses programResponse = response.as(ProgramResponses.class);
          ChainingData.programId =  programResponse.getProgramId();
-         System.out.println(ChainingData.programId);
-         
+         ChainingData.programName = programResponse.getProgramName();
+       
+	    }  
     }
 
 }

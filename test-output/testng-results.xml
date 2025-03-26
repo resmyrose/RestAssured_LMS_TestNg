@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-24T17:18:28 CDT" name="Test Suite" finished-at="2025-03-24T17:18:29 CDT" duration-ms="1365">
+  <suite started-at="2025-03-25T22:18:22 CDT" name="API Test Suite" finished-at="2025-03-25T22:18:24 CDT" duration-ms="1745">
     <groups>
     </groups>
-    <test started-at="2025-03-24T17:18:28 CDT" name="Login Tests" finished-at="2025-03-24T17:18:29 CDT" duration-ms="1365">
+    <test started-at="2025-03-25T22:18:22 CDT" name="Login Test" finished-at="2025-03-25T22:18:23 CDT" duration-ms="1004">
       <class name="com.api.tests.LoginRequest">
-        <test-method signature="login()[pri:0, instance:com.api.tests.LoginRequest@635eaaf1]" started-at="2025-03-24T17:18:28 CDT" name="login" finished-at="2025-03-24T17:18:29 CDT" duration-ms="964" status="PASS">
+        <test-method signature="login()[pri:0, instance:com.api.tests.LoginRequest@15c43bd9]" started-at="2025-03-25T22:18:22 CDT" name="login" finished-at="2025-03-25T22:18:23 CDT" duration-ms="988" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
       </class> <!-- com.api.tests.LoginRequest -->
+    </test> <!-- Login Test -->
+    <test started-at="2025-03-25T22:18:23 CDT" name="Create Program Test" finished-at="2025-03-25T22:18:23 CDT" duration-ms="360">
       <class name="com.api.tests.CreateProgram">
-        <test-method signature="Createprogram(java.lang.String,org.json.simple.JSONObject)[pri:0, instance:com.api.tests.CreateProgram@636be97c]" started-at="2025-03-24T17:18:29 CDT" name="Createprogram" data-provider="jsonDataProvider" finished-at="2025-03-24T17:18:29 CDT" duration-ms="383" status="PASS">
+        <test-method signature="Createprogram(java.lang.String,java.lang.String)[pri:0, instance:com.api.tests.CreateProgram@16293aa2]" started-at="2025-03-25T22:18:23 CDT" name="Createprogram" finished-at="2025-03-25T22:18:23 CDT" duration-ms="358" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Create Program with valid Data]]>
+                <![CDATA[Program.json]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{"programDescription":"coursess","programName":"securityCyber","programStatus":"Active"}]]>
+                <![CDATA[Create Program with valid Data]]>
               </value>
             </param>
           </params>
@@ -30,6 +32,68 @@
           </reporter-output>
         </test-method> <!-- Createprogram -->
       </class> <!-- com.api.tests.CreateProgram -->
-    </test> <!-- Login Tests -->
-  </suite> <!-- Test Suite -->
+    </test> <!-- Create Program Test -->
+    <test started-at="2025-03-25T22:18:23 CDT" name="Create Batch Test" finished-at="2025-03-25T22:18:24 CDT" duration-ms="365">
+      <class name="com.api.tests.CreateBatch">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:com.api.tests.CreateBatch@3023df74]" started-at="2025-03-25T22:18:23 CDT" name="setUp" finished-at="2025-03-25T22:18:23 CDT" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[BatchData.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Create Batch]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="Createbatch(org.json.simple.JSONObject,java.lang.String,int)[pri:0, instance:com.api.tests.CreateBatch@3023df74]" started-at="2025-03-25T22:18:23 CDT" name="Createbatch" data-provider="batchDataProvider" finished-at="2025-03-25T22:18:24 CDT" duration-ms="174" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{"batchName":"@@6","batchNoOfClasses":15,"batchDescription":"@@@","batchStatus":"InActive","programId":""}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[InvalidBatch_NoProgramId]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[400]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Createbatch -->
+        <test-method signature="Createbatch(org.json.simple.JSONObject,java.lang.String,int)[pri:0, instance:com.api.tests.CreateBatch@3023df74]" started-at="2025-03-25T22:18:24 CDT" name="Createbatch" data-provider="batchDataProvider" finished-at="2025-03-25T22:18:24 CDT" duration-ms="181" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{"batchName":"SDET12238","batchNoOfClasses":15,"batchDescription":"Nebastches","batchStatus":"Active","programId":"{{programId}}"}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ValidBatch]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[201]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Createbatch -->
+      </class> <!-- com.api.tests.CreateBatch -->
+    </test> <!-- Create Batch Test -->
+  </suite> <!-- API Test Suite -->
 </testng-results>

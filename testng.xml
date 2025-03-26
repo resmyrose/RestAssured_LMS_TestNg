@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Test Suite">
-    <test name="Login Tests">
+ 
+<suite name="API Test Suite">
+ <!-- Login Test -->
+    <test name="Login Test">
+         
         <classes>
-            <class name="com.api.tests.LoginRequest"/>
-            <class name="com.api.tests.CreateProgram"/>
-             
+            <class name="com.api.tests.LoginRequest" />
         </classes>
     </test>
-
-     
+    <test name="Create Program Test">
+        <parameter name="jsonPath" value="Program.json" />
+        <parameter name="jsonKey" value="Create Program with valid Data" />
+        
+        <classes>
+            <class name="com.api.tests.CreateProgram" />
+        </classes>
+    </test>
+    <test name="Create Batch Test">
+        <parameter name="jsonPath" value="BatchData.json" />
+        <parameter name="jsonKey" value="Create Batch" />
+        <classes>
+            <class name="com.api.tests.CreateBatch" />
+        </classes>
+    </test>
 </suite>

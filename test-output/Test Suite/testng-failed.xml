@@ -5,7 +5,7 @@
     <classes>
       <class name="com.api.tests.CreateProgram">
         <methods>
-          <include name="Createprogram" invocation-numbers="0"/>
+          <include name="Createprogram"/>
         </methods>
       </class> <!-- com.api.tests.CreateProgram -->
     </classes>

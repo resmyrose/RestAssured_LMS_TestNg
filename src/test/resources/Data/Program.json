@@ -20,8 +20,8 @@
 				
 		{
 			"scenarioName": "Valid Data",
-			"programName" :"Sdet12345",
-			"programDescription":"OnlineTestingCOurse",
+			"programName" :"Cloudsart",
+			"programDescription":"CloudingCoursses",
 			"programStatus":"Active",
 			"statusCode":201
 		}
@@ -31,8 +31,8 @@
 		
 			{
 				"scenarioName": "Valid Data",
-				"programDescription":"ArtWork Course",
-				"programName" :"Artists Courses",
+				"programDescription":"ArCourse",
+				"programName" :"SAPSCourses",
 				"programStatus":"Active",
 				"statusCode":200
 			}

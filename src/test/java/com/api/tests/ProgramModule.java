@@ -1,22 +1,18 @@
 package com.api.tests;
 
 import java.io.IOException;
-
 import java.util.ResourceBundle;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.api.base.BaseClass;
 import com.api.model.responses.ProgramResponses;
 import com.api.utils.ChainingData;
- 
 import com.api.utils.JsonReader;
 
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 
 public class ProgramModule extends BaseClass{
@@ -42,6 +38,7 @@ public class ProgramModule extends BaseClass{
 		String endpoint = resourceBundle.getString("CreateProgram");
 		response = baseClass.PostRequest(jsondata, endpoint);
 		System.out.println("Response: " + response.asPrettyString());
+		
 		// Assert that the status code matches the expected value from JSON
 		int actualStatusCode = response.getStatusCode();
 		System.out.println("Actual Status Code: " + actualStatusCode);
@@ -53,11 +50,15 @@ public class ProgramModule extends BaseClass{
 		String programId = response.jsonPath().getString("programId");
 		if (programId != null && !programId.isEmpty()) {
 			System.out.println("Created Program ID: " + programId);
+			ProgramResponses programresponse = response.as(ProgramResponses.class);
 			ChainingData.programId = Integer.parseInt(programId);
-			ChainingData.programName = response.jsonPath().getString("programName");
+			ChainingData.programName = programresponse.getProgramName();
+			response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath(resourceBundle.getString("ProgramSchema")));
+			System.out.println("Schema Validation is Successfull for Create Program");
 		} else {
 			System.err.println("Program creation failed for scenario: " + programData.get("programName"));
 		}
+		
 		
 		
 	}
@@ -106,6 +107,8 @@ public void getProgrambyId() {
 		if (programId != null && !programId.isEmpty()) {
 			System.out.println("Created Program ID: " + programId);
 			ChainingData.programId = Integer.parseInt(programId);
+			response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath(resourceBundle.getString("ProgramSchema")));
+			System.out.println("Schema Validation is Successfull for Update Program");
 			 
 		} else {
 			System.err.println("Program creation failed for scenario: " + programData.get("programName"));

@@ -11,8 +11,8 @@
 	    },
     {
       "scenarioName": "ValidBatch",
-      "batchDescription": "oneBatchess",
-      "batchName": "SDET954",
+      "batchDescription": "onevBatchess",
+      "batchName": "SDET984",
       "batchNoOfClasses": 15,
       "batchStatus": "Active",
       "programId": "{{programId}}",

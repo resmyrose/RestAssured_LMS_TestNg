@@ -20,8 +20,8 @@
 				
 		{
 			"scenarioName": "Valid Data",
-			"programName" :"Cloudsart",
-			"programDescription":"CloudingCoursses",
+			"programName" :"Cloudsavrt",
+			"programDescription":"CloudingvCoursses",
 			"programStatus":"Active",
 			"statusCode":201
 		}
@@ -30,9 +30,9 @@
 	"Update Program": [
 		
 			{
-				"scenarioName": "Valid Data",
-				"programDescription":"ArCourse",
-				"programName" :"SAPSCourses",
+				"scenarioName": "Update Valid Data",
+				"programDescription":"ArvCourse",
+				"programName" :"SAPSCourvses",
 				"programStatus":"Active",
 				"statusCode":200
 			}
